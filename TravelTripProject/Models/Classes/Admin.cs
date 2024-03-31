@@ -10,9 +10,9 @@ namespace TravelTripProject.Models.Classes
     {
         [Key]
         public int ID { get; set; }
-        public string User { get; set; }
-        public int Password { get; set; }
+        public string AdminUsername { get; set; }
 
+        public string Password { get; set; }
 
     }
 }

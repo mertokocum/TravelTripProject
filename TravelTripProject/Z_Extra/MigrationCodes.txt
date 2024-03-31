@@ -1,0 +1,24 @@
+﻿C:\Users\ROG\source\repos\TravelTripProject\TravelTripProject\Web.config 
+dosyasında 
+
+<connectionStrings>
+	<add name="Context" connectionString="Data Source=DESKTOP-KH7LR7T\SQLEXPRESS;
+		 Initial Catalog=TravelDb; Integrated Security=True;"
+		 providerName="System.Data.SqlClient" />
+</connectionStrings>
+
+ekledik
+
+
+
+Enable-Migrations
+
+C:\Users\ROG\source\repos\TravelTripProject\TravelTripProject\Migrations\Configuration.cs 
+dosyasında
+            AutomaticMigrationsEnabled = false; iken
+
+            AutomaticMigrationsEnabled = true; yapmalıyız
+
+update_database
+
+
