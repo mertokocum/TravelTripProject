@@ -13,6 +13,7 @@ namespace TravelTripProject.Models.Classes
         public string Username { get; set; }
         public string Mail { get; set; }
         public string Comment { get; set; }
-        public int BLOGID { get; set; }
+        public Blog Blog { get; set; }         //blog tablosundan deger turetme
+
     }
 }
