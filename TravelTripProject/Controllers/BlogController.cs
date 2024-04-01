@@ -18,5 +18,11 @@ namespace TravelTripProject.Controllers
             var vBlogs = c.Blogs.ToList();
             return View(vBlogs);
         }
+
+        public ActionResult BlogDetail(int id)
+        {
+            return View();
+
+        }
     }
 }
