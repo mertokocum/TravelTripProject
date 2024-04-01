@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -164,6 +165,25 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="webblogtemplate\about.html" />
+    <Content Include="webblogtemplate\contact.html" />
+    <Content Include="webblogtemplate\css\bootstrap.css" />
+    <Content Include="webblogtemplate\css\style.css" />
+    <Content Include="webblogtemplate\images\avatar.png" />
+    <Content Include="webblogtemplate\images\icon3.png" />
+    <Content Include="webblogtemplate\images\logo.jpg" />
+    <Content Include="webblogtemplate\images\man.jpg" />
+    <Content Include="webblogtemplate\images\more.png" />
+    <Content Include="webblogtemplate\images\post1.jpg" />
+    <Content Include="webblogtemplate\images\post2.jpg" />
+    <Content Include="webblogtemplate\images\post3.jpg" />
+    <Content Include="webblogtemplate\images\search.png" />
+    <Content Include="webblogtemplate\index.html" />
+    <Content Include="webblogtemplate\js\easing.js" />
+    <Content Include="webblogtemplate\js\jquery.min.js" />
+    <Content Include="webblogtemplate\js\move-top.js" />
+    <Content Include="webblogtemplate\single.html" />
+    <Content Include="webblogtemplate\w3layouts-License.txt" />
     <Content Include="Z_Extra\colorconfig.html" />
     <Content Include="Z_Extra\MigrationCodes.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -239,6 +259,7 @@
     <Content Include="Views\Default\Index.cshtml" />
     <Content Include="Views\Default\About.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Blog\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
