@@ -1,6 +1,5 @@
-﻿@using Microsoft.Ajax.Utilities
-@using TravelTripProject.Models.Classes
-@model List<Blog>
+﻿
+@model TravelTripProject.Models.Classes.BlogComment
 @{
     ViewBag.Title = "BlogDetail";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -39,15 +38,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="container">
 		    <div class="col-md-8 single-main">
 			    <div class="single-grid">
-				    @foreach (var x in Model)
+				    @foreach (var x in Model.Value1)
 				    {
-					    if (x != null)
-					    {
+					    
+					    
 						    <h2>@x.Title</h2>
 						    <img src="@x.BlogImage" alt="" style="margin-bottom: 20px; max-height: 30rem; object-fit: contain;" />
                             
 						    <p>@x.Description</p>
-					    }
+					    
 				    }
 
 			    </div>
