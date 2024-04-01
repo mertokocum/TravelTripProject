@@ -1,4 +1,6 @@
-﻿
+﻿@using Microsoft.Ajax.Utilities
+@using TravelTripProject.Models.Classes
+@model List<Blog>
 @{
     ViewBag.Title = "BlogDetail";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -37,9 +39,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="container">
 		    <div class="col-md-8 single-main">
 			    <div class="single-grid">
-				    <img src="~/webblogtemplate/images/post1.jpg" alt="" />
-				    <p>
-					    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+				    @foreach (var x in Model)
+				    {
+					    if (x != null)
+					    {
+						    <h2>@x.Title</h2>
+						    <img src="@x.BlogImage" alt="" style="margin-bottom: 20px; max-height: 30rem; object-fit: contain;" />
+                            
+						    <p>@x.Description</p>
+					    }
+				    }
+
 			    </div>
 			    <ul class="comment-list">
 				    <li>
@@ -64,8 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    <form>
 					    <input type="text" placeholder="Name" required />
 					    <input type="text" placeholder="Email" required />
-					    <input type="text" placeholder="Phone" required />
-					    <textarea placeholder="Message"></textarea>
+					    <textarea placeholder="Comment"></textarea>
 					    <input type="submit" value="SEND" />
 				    </form>
 			    </div>

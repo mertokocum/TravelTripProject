@@ -19,9 +19,10 @@ namespace TravelTripProject.Controllers
             return View(vBlogs);
         }
 
-        public ActionResult BlogDetail(int id)
-        {
-            return View();
+        public ActionResult BlogDetail(int id) //burada  blogdetail/""xx"" olmasını sağladık
+         {
+            var findBlog = c.Blogs.Where(x => x.ID == id).ToList(); //blogdetail/x ile dbdeki Blog ID  mizi eşledik
+            return View(findBlog);
 
         }
     }
