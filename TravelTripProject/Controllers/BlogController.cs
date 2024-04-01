@@ -24,7 +24,7 @@ namespace TravelTripProject.Controllers
 
             //var findBlog = c.Blogs.Where(x => x.ID == id).ToList(); //blogdetail/x ile dbdeki Blog ID  mizi eşledik
             bc.Value1 = c.Blogs.Where(x => x.ID == id).ToList();
-
+            bc.Value2 = c.CommentsS.Where(x => x.Blogid == id).ToList();
             return View(bc);
 
         }
