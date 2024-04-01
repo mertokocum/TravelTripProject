@@ -1,4 +1,5 @@
-﻿
+﻿@using TravelTripProject.Models.Classes
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -12,7 +13,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
     <link href="~/webblogtemplate/css/bootstrap.css" rel='stylesheet' type='text/css' />
     <link href="~/webblogtemplate/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,30 +24,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
     <!----//webfonts---->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <!--end slider -->
-    <!--script-->
-    <script type="text/javascript" src="~/webblogtemplate/js/move-top.js"></script>
-    <script type="text/javascript" src="~/webblogtemplate/js/easing.js"></script>
-    <!--/script-->
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
-            });
-        });
-    </script>
-    <!---->
+
+
 
 </head>
 <body>
     <!---header---->
     <div class="header">
         <div class="container">
-            
+
             <!---start-top-nav---->
-            
+
             <div class="clearfix"></div>
             <script>
                 $("span.menu").click(function () {
@@ -60,54 +47,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!--/header-->
     <div class="single">
-	    <div class="container">
-		    <div class="col-md-8 single-main">
-			    <div class="single-grid">
-				    <img src="~/webblogtemplate/images/operahouse.jpg" alt="" />
-				    <a href="#">Sydney Opera House</a>
-				    <p>
-					    Lorem Ipsum is simply dummy text.
-				    </p>
-			    </div>
-			    <br/>
-                <br/>
-			    <div class="single-grid">
-				    <img src="~/webblogtemplate/images/ephesus.jpg" alt="" />
-				    <a href="#">Ancient City of Ephesus</a>
-				    <p>
-					    Checking test text... It has not connected to the db yet.
-				    </p>
-			    </div>
-                
-                
-		    </div>
+        <div class="container">
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model)
+                {
+                    <div class="single-grid" style="position: relative;">
+	                    <img src="@x.BlogImage" alt="" style="margin-bottom:20px; max-height:30rem; object-fit: contain;" />
+	                    <p style="position: absolute; top: 0; left: 0; margin: 0px 10px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:cadetblue;">@x.Date</p>
+	                    <a href="#">@x.Title</a>
+	                    <p>@x.Description</p>
+                    </div>
 
-		    <div class="col-md-4 side-content">
-			    <div class="recent">
-				    <h3>LATEST BLOGS</h3>
-				    <ul>
-					    <li><a href="#">Aliquam tincidunt mauris</a></li>
-					    <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-					    <li><a href="#">Nunc dignissim risus consecu</a></li>
-					    <li><a href="#">Cras ornare tristiqu</a></li>
-				    </ul>
-			    </div>
-			    <div class="comments">
-				    <h3>LATEST COMMENTS</h3>
-				    <ul>
-					    <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
-					    <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
-					    <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
-				    </ul>
-			    </div>
-                
-		    </div>
-		    <div class="clearfix"></div>
-	    </div>
+                    <br />
+                    <br />
+                }
+
+
+
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3>LATEST BLOGS</h3>
+                    <ul>
+                        <li><a href="#">Aliquam tincidunt mauris</a></li>
+                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
+                        <li><a href="#">Nunc dignissim risus consecu</a></li>
+                        <li><a href="#">Cras ornare tristiqu</a></li>
+                    </ul>
+                </div>
+                <div class="comments">
+                    <h3>LATEST COMMENTS</h3>
+                    <ul>
+                        <li><a href="#">Amada Doe </a> on <a href="#">Hello World!</a></li>
+                        <li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                        <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
-    </body>
-    <!---->
-    
+</body>
+<!---->
+</html>
+
 
 
 

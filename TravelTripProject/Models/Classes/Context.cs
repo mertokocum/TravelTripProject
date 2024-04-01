@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace TravelTripProject.Models.Classes
 {
-    public class Context : DbContext
+    public class Context : DbContext //el ile eklendi
     {
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Address> Addresses { get; set; }
