@@ -1,0 +1,23 @@
+﻿@using TravelTripProject.Models.Classes
+@model List<Blog>
+
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+	    <div class="right">
+		    <div class="bot-left">
+			    <img src="@x.BlogImage" alt="" style="width:275.99px; height:183.99px;" />
+		    </div>
+		    <div class="left-text">
+			    <h4>@x.Title</h4>
+			    <span class="doller">@x.Date</span>
+			    <p>açıklama gelecek</p>
+			    <p><a href="/blog/blogdetail/@x.ID"><span class="read">Read More >></span></a></p>
+		    </div>
+	    </div>
+    }
+
+
+</div>
+
+
