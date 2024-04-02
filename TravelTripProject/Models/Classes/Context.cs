@@ -14,5 +14,8 @@ namespace TravelTripProject.Models.Classes
         public DbSet<AboutMe> AboutMes { get; set; }
         public DbSet<Contact> Contacts{ get; set; }
         public DbSet<Comments> CommentsS { get; set; }
+        public DbSet<AvatarImageUrl> AvatarImageUrls { get; set; }
+
+
     }
 }

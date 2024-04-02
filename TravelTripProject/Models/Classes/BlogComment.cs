@@ -9,5 +9,7 @@ namespace TravelTripProject.Models.Classes
     {
         public IEnumerable<Blog> Value1 { get; set; }
         public IEnumerable<Comments> Value2 { get; set; }
+        public IEnumerable<AvatarImageUrl> UrlValues { get; set; } // AvatarImageUrl listesini ekledik
+
     }
 }

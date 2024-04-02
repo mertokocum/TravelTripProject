@@ -138,6 +138,7 @@
     <Compile Include="Models\Classes\AboutMe.cs" />
     <Compile Include="Models\Classes\Address.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
+    <Compile Include="Models\Classes\AvatarImageUrl.cs" />
     <Compile Include="Models\Classes\Blog.cs" />
     <Compile Include="Models\Classes\BlogComment.cs" />
     <Compile Include="Models\Classes\Comments.cs" />

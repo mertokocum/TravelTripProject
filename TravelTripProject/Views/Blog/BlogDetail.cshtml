@@ -50,11 +50,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    }
 
 			    </div>
+				
 				@foreach (var y in Model.Value2)
 			    {
 				    <ul class="comment-list">
 					    <li>
-						    <img src="~/webblogtemplate/images/avatar.png" class="img-responsive" style="margin-top:10px" alt="">
+						    @foreach (var z in Model.UrlValues)
+						    {
+							    <img src="@z.ImageUrl" class="img-responsive" style="margin-top:10px" alt="">
+
+
+						    }
 						    <div class="desc">
 
 							    <h2>@y.Username</h2>

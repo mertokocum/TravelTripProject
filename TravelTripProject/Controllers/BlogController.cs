@@ -21,6 +21,8 @@ namespace TravelTripProject.Controllers
         BlogComment bc=new BlogComment();
         public ActionResult BlogDetail(int id) //burada  blogdetail/""xx"" olmasını sağladık
          {
+            bc.UrlValues= c.AvatarImageUrls.Where(x => x.ID == id).ToList();
+
 
             //var findBlog = c.Blogs.Where(x => x.ID == id).ToList(); //blogdetail/x ile dbdeki Blog ID  mizi eşledik
             bc.Value1 = c.Blogs.Where(x => x.ID == id).ToList();
