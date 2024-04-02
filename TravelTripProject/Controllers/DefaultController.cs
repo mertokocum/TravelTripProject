@@ -15,7 +15,7 @@ namespace TravelTripProject.Controllers
 
         public ActionResult Index()
         {
-            var values = c.Blogs.ToList();
+            var values = c.Blogs.OrderByDescending(x => x.ID).Take(8).ToList();
             return View(values);
         }
 
@@ -31,12 +31,13 @@ namespace TravelTripProject.Controllers
         }
         public PartialViewResult Partial2()
         {
-            var values = c.Blogs.Where(x => x.ID == 1).ToList();
+            // ID'si sondan üçüncü olan değeri aldık
+            var values = c.Blogs.OrderByDescending(x => x.ID).Skip(2).Take(1).ToList();
             return PartialView(values);
         }
         public PartialViewResult Partial3()
         {
-            var values = c.Blogs.ToList();
+            var values = c.Blogs.OrderByDescending(x => x.ID).ToList();
             return PartialView(values);
         }
 
