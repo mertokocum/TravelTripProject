@@ -31,8 +31,14 @@ namespace TravelTripProject.Controllers
         }
         public PartialViewResult Partial2()
         {
-            var values2 = c.Blogs.Where(x => x.ID==1).ToList();
-            return PartialView(values2);
+            var values = c.Blogs.Where(x => x.ID == 1).ToList();
+            return PartialView(values);
         }
+        public PartialViewResult Partial3()
+        {
+            var values = c.Blogs.ToList();
+            return PartialView(values);
+        }
+
     }
 }

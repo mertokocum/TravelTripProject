@@ -265,6 +265,7 @@
     <Content Include="Views\Blog\BlogDetail.cshtml" />
     <Content Include="Views\Default\Partial1.cshtml" />
     <Content Include="Views\Default\Partial2.cshtml" />
+    <Content Include="Views\Default\Partial3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
