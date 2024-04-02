@@ -13,12 +13,24 @@ namespace TravelTripProject.Controllers
         // GET: Blog
 
         private Context c = new Context();
+        BlogComment bc = new BlogComment();
+
+
+
         public ActionResult Index()
         {
-            var vBlogs = c.Blogs.ToList();
-            return View(vBlogs);
+            bc.Value1 = c.Blogs.OrderByDescending(x => x.ID).ToList();
+            bc.Value3 = c.Blogs.OrderByDescending(x=>x.ID).Take(3).ToList();
+
+
+
+            //var vBlogs = c.Blogs.ToList();
+            return View(bc);
         }
-        BlogComment bc=new BlogComment();
+
+
+
+
         public ActionResult BlogDetail(int id) //burada  blogdetail/""xx"" olmasını sağladık
          {
             bc.UrlValues= c.AvatarImageUrls.Where(x => x.ID == id).ToList();

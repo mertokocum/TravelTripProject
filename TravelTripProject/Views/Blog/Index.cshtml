@@ -1,5 +1,4 @@
-﻿@using TravelTripProject.Models.Classes
-@model List<Blog>
+﻿@model TravelTripProject.Models.Classes.BlogComment
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -49,13 +48,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-                @foreach (var x in Model)
+                @foreach (var x in Model.Value1)
                 {
                     <div class="single-grid" style="position: relative; margin-bottom: 2rem; padding-bottom: 5rem; background: linear-gradient(to bottom, #9c3155, white); ">
-	                    <img src="@x.BlogImage" alt="" style="margin-bottom:10px; max-height:30rem; object-fit: contain;" />
-	                    <p style="position: absolute; top: 0; left: 0; margin: 0px 10px; ">@x.Date</p>
+                        <img src="@x.BlogImage" alt="" style="margin-bottom:10px; max-height:30rem; object-fit: contain;" />
+                        <p style="position: absolute; top: 0; left: 0; margin: 0px 10px; ">@x.Date</p>
                         <h2 style="margin-left:1rem"><a href="~/blog/blogdetail/@x.ID">@x.Title</a></h2>
-	                    
+
                     </div>
 
                     <br />
@@ -69,12 +68,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-md-4 side-content">
                 <div class="recent">
                     <h3>LATEST BLOGS</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
+                    @foreach (var y in Model.Value3)
+                    {
+                        <ul>
+                            <li><a href="~/blog/Blogdetail/@y.ID">@y.Title</a></li>
+
+                        </ul>
+
+                    }
                 </div>
                 <div class="comments">
                     <h3>LATEST COMMENTS</h3>
