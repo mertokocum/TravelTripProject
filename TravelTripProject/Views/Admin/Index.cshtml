@@ -6,31 +6,38 @@
 }
 
 <h2>Blog List</h2>
-<br/>
+<br />
 <table class="table table-bordered">
-	<tr>
-		<th>ID</th>
-		<th>TITLE</th>
-		<th style="width:100px">DELETE</th>
-		<th style="width:100px">UPDATE</th>
-	</tr>
-	@foreach (var x in Model)
-	{
-		<tr>
-			<td>@x.ID</td>
-			<td>@x.Title</td>
-			<td style="text-align: center;">
-				<div style="display: inline-block;">
-					<a href="#" class="btn btn-danger">Delete</a>
-				</div>
-			</td>
-			<td style="text-align: center;">
-				<div style="display: inline-block;">
+    <tr>
+        <th>ID</th>
+        <th style="">TITLE</th>
+        <th style="width: 100px; text-align: center;">DELETE</th>
+        <th style="width: 100px; text-align: center;">UPDATE</th>
+        <th style="width: 100px; text-align: center;">DETAILS</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Title</td>
+            <td style="text-align: center;">
+                <div style="display: inline-block;">
+                    <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+            </td>
+            <td style="text-align: center;">
+                <div style="display: inline-block;">
                     <a href="#" class="btn btn-success">Update</a>
-				</div>
-			</td>
-			
-		</tr>
-	}
+                </div>
+            </td>
+            <td style="text-align: center;">
+                <div style="display: inline-block;">
+                    <a href="/blog/blogdetail/@x.ID" class="btn btn-info">Details</a>
+                </div>
+            </td>
+
+        </tr>
+    }
 </table>
+<a href="#" class="btn btn-primary">Add Blog</a>
 
