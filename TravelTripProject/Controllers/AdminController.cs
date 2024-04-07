@@ -16,5 +16,16 @@ namespace TravelTripProject.Controllers
             var values = c.Blogs.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult NewBlog()
+        {
+            
+            return View();
+        }
+        [HttpPost]
+        public ActionResult NewBlog(Blog p)
+        {
+            return View();
+        }
     }
 }
