@@ -1,0 +1,42 @@
+﻿@using TravelTripProject.Models.Classes
+@model List<Blog>
+<div class="padding1">
+    <h4>Our Best Places</h4>
+    <div class="box-left">
+        @foreach (var x in Model)
+        {
+            <a href="/blog/blogdetail/@x.ID">
+                <div class="bot-img">
+                    <img src="@x.BlogImage" alt="" />
+                </div>
+                <div class="bot-desc">
+                    <p>@x.Description.Substring(0, 80)...</p>
+                </div>
+                <div class="clear"></div>
+            </a>
+        }
+    </div>
+    <div class="box1-left">
+        <div class="bot-img">
+            <img src="~/web/images/pic9.jpg" alt="" />
+        </div>
+        <div class="bot-desc1">
+            <p> 4 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+        </div>
+        <div class="clear"></div>
+        <div class="bot-img">
+            <img src="~/web/images/pic10.jpg" alt="" />
+        </div>
+        <div class="bot-desc1">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+        </div>
+        <div class="clear"></div>
+        <div class="bot-img">
+            <img src="~/web/images/pic3.jpg" alt="" />
+        </div>
+        <div class="bot-desc1">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet </p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
