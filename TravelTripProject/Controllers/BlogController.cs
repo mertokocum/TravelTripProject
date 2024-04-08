@@ -42,5 +42,21 @@ namespace TravelTripProject.Controllers
             return View(bc);
 
         }
+
+        [HttpGet]
+        public PartialViewResult Commenting()
+        {
+            
+            return PartialView();
+        }
+        [HttpPost]
+        public PartialViewResult Commenting(Comments y)
+        {
+            c.CommentsS.Add(y);
+            c.SaveChanges();
+            return PartialView();
+        }
+
+       
     }
 }
