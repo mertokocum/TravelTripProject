@@ -43,5 +43,15 @@ namespace TravelTripProject.Controllers
             
             return View("GetBlog",blog);
         }
+        public ActionResult UpdateBlog(Blog b)
+        {
+            var blog = c.Blogs.Find(b.ID);
+            blog.Description=b.Description;
+            blog.Title=b.Title;
+            blog.BlogImage=b.BlogImage;
+            blog.Date=b.Date;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

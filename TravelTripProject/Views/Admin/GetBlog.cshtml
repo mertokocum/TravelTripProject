@@ -7,10 +7,10 @@
 
 <h2>Edit Blog</h2>
 <br/>
-@using (Html.BeginForm("GetBlog", "Admin", FormMethod.Post))
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
 {
 	@Html.LabelFor(x => x.ID)
-	@Html.TextBoxFor(x => x.ID, new { @class = "form-control" })
+	@Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly="readonly" })
 	<br/>
 	@*<input name="Title" type="text" required></input>  böyle de yapılabilir*@
 	@Html.LabelFor(x => x.Title)
@@ -23,7 +23,7 @@
 	@Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
 	<br/>
 	@Html.LabelFor(x => x.Description)
-	@Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+	@Html.TextAreaFor(x => x.Description,13,1, new { @class = "form-control" })
 	<br/>
 	<button class="btn btn-primary">OK</button>
 }
