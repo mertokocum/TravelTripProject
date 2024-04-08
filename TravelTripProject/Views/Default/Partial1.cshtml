@@ -3,6 +3,12 @@
 <div class="con-bot">
 	@foreach (var x in Model)
 	{
+		string description = x.Description;
+		if (description.Length > 95)              
+				
+		{
+			description = description.Substring(0, 95) + "...";
+		}
 		<div class="left">
 			<div class="bot-left">
 				<img src="@x.BlogImage" alt="" style="width:275.99px; height:183.99px;" />
@@ -10,7 +16,7 @@
 			<div class="left-text">
 				<h4>@x.Title</h4>
 				<span class="doller">@x.Date.ToString("dd/MM/yyy")</span>
-				<p>@x.Description.Substring(0,95)...</p>
+				<p>@description</p>
 				<p><a href="/blog/blogdetail/@x.ID"><span class="read">Read More >></span></a></p>
 			</div>
 		</div>
