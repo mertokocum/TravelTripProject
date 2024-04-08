@@ -19,7 +19,7 @@ namespace TravelTripProject.Controllers
         [HttpGet]
         public ActionResult NewBlog()
         {
-            
+
             return View();
         }
         [HttpPost]
@@ -36,6 +36,12 @@ namespace TravelTripProject.Controllers
             c.Blogs.Remove(blog);
             c.SaveChanges();
             return RedirectToAction("Index");
+        }
+        public ActionResult GetBlog(int id)
+        {
+            var blog = c.Blogs.Find(id);
+            
+            return View("GetBlog",blog);
         }
     }
 }

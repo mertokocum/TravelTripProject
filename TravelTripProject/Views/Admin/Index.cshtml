@@ -12,7 +12,7 @@
         <th>ID</th>
         <th style="">TITLE</th>
         <th style="width: 100px; text-align: center;">DELETE</th>
-        <th style="width: 100px; text-align: center;">UPDATE</th>
+        <th style="width: 100px; text-align: center;">EDIT</th>
         <th style="width: 100px; text-align: center;">DETAILS</th>
     </tr>
     @foreach (var x in Model)
@@ -27,7 +27,7 @@
             </td>
             <td style="text-align: center;">
                 <div style="display: inline-block;">
-                    <a href="#" class="btn btn-success">Update</a>
+                    <a href="/admin/getblog/@x.ID" class="btn btn-success">Edit</a>
                 </div>
             </td>
             <td style="text-align: center;">
