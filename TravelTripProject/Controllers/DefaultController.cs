@@ -29,7 +29,7 @@ namespace TravelTripProject.Controllers
             var values = c.Blogs.OrderByDescending(x => x.ID).Take(2).ToList();
             return PartialView(values);
         }
-        public PartialViewResult Partial2()
+        public PartialViewResult Partial1_2()
         {
             // ID'si sondan üçüncü olan değeri aldık
             var values = c.Blogs.OrderByDescending(x => x.ID).Skip(2).Take(1).ToList();
@@ -45,7 +45,7 @@ namespace TravelTripProject.Controllers
             var values = c.Blogs.Take(3).ToList();
             return PartialView(values);
         }
-        public PartialViewResult Partial5()
+        public PartialViewResult Partial4_2()
         {
             var values = c.Blogs.Take(3).OrderByDescending(x => x.ID).ToList();
             return PartialView(values);
