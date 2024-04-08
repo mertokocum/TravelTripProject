@@ -51,16 +51,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 			    </div>
 				
-				@foreach (var y in Model.Value2)
+			    @foreach (var y in Model.Value2)
 			    {
 				    <ul class="comment-list">
 					    <li>
-						    @foreach (var z in Model.UrlValues)
-						    {
-							    <img src="@z.ImageUrl" class="img-responsive" style="margin-top:10px" alt="">
+						    @{
+							    Random random = new Random();
+							    int randomIndex = random.Next(0, 9);
+							    var selectedImageUrl = Model.UrlValues.ElementAt(randomIndex);
+							    <img src="@selectedImageUrl.ImageUrl" class="img-responsive" style="margin-top:10px" alt="">
+
 
 
 						    }
+					    
 						    <div class="desc">
 
 							    <h2>@y.Username</h2>

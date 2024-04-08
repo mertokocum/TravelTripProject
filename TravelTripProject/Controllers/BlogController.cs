@@ -33,7 +33,7 @@ namespace TravelTripProject.Controllers
 
         public ActionResult BlogDetail(int id) //burada  blogdetail/""xx"" olmasını sağladık
          {
-            bc.UrlValues= c.AvatarImageUrls.Where(x => x.ID == id).ToList();
+            bc.UrlValues= c.AvatarImageUrls.ToList();
 
 
             //var findBlog = c.Blogs.Where(x => x.ID == id).ToList(); //blogdetail/x ile dbdeki Blog ID  mizi eşledik
@@ -44,9 +44,9 @@ namespace TravelTripProject.Controllers
         }
 
         [HttpGet]
-        public PartialViewResult Commenting()
+        public PartialViewResult Commenting(int id)
         {
-            
+            ViewBag.value = id;
             return PartialView();
         }
         [HttpPost]
