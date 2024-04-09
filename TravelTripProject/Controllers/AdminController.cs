@@ -59,5 +59,12 @@ namespace TravelTripProject.Controllers
             var comments = c.CommentsS.ToList();
             return View(comments);
         }
+        public ActionResult DeleteComment(int id)
+        {
+            var comment = c.CommentsS.Find(id);
+            c.CommentsS.Remove(comment);
+            c.SaveChanges();
+            return RedirectToAction("CommentList");
+        }
     }
 }
