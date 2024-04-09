@@ -10,7 +10,8 @@ namespace TravelTripProject.Controllers
     public class AdminController : Controller
     {
         // GET: Admin
-        private Context c = new Context();
+        Context c = new Context();
+        [Authorize]
         public ActionResult Index()
         {
             var values = c.Blogs.ToList();
