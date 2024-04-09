@@ -28,6 +28,7 @@ namespace TravelTripProject.Controllers
             }
             else
             {
+                ViewBag.ErrorMessage = "Incorrect password. Please try again.";
                 return View();
             }
             
