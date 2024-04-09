@@ -19,23 +19,32 @@
     </tr>
     @foreach (var x in Model)
     {
-
+	    
+        
+        
 
 
         <tr>
             <td>@x.ID</td>
             <td>@x.Username</td>
             <td>@x.Mail</td>
-            <td>@x.Comment</td>
+            <td>@{
+	                string commentsub = x.Comment;
+	                if (commentsub.Length > 85)
+
+	                {
+		                commentsub = commentsub.Substring(0, 85) + "...";
+	                }
+                }@commentsub</td>
             <td>@x.Blog.Title</td>
             <td style="text-align: center;">
                 <div style="display: inline-block;">
-                    <a href="/admin/deletecomment/@x.ID" class="btn btn-warning">DELETE</a>
+                    <a href="/admin/deletecomment/@x.ID/" class="btn btn-warning">DELETE</a>
                 </div>
             </td>
             <td style="text-align: center;">
                 <div style="display: inline-block;">
-                    <a href="#" class="btn btn-success">EDIT</a>
+                    <a href="/admin/getcomment/@x.ID/" class="btn btn-success">EDIT</a>
                 </div>
             </td>
         </tr>
