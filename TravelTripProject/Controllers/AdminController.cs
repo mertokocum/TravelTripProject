@@ -18,19 +18,21 @@ namespace TravelTripProject.Controllers
             return View(values);
         }
         [HttpGet]
+        [Authorize]
         public ActionResult NewBlog()
         {
 
             return View();
         }
         [HttpPost]
+        [Authorize]
         public ActionResult NewBlog(Blog p)
         {
             c.Blogs.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public ActionResult DeleteBlog(int id)
         {
             var blog = c.Blogs.Find(id);
@@ -38,12 +40,14 @@ namespace TravelTripProject.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public ActionResult GetBlog(int id)
         {
             var blog = c.Blogs.Find(id);
             
             return View("GetBlog",blog);
         }
+        [Authorize]
         public ActionResult UpdateBlog(Blog b)
         {
             var blog = c.Blogs.Find(b.ID);
@@ -54,12 +58,13 @@ namespace TravelTripProject.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public ActionResult CommentList()
         {
             var comments = c.CommentsS.ToList();
             return View(comments);
         }
+        [Authorize]
         public ActionResult DeleteComment(int id)
         {
             var comment = c.CommentsS.Find(id);
@@ -67,12 +72,13 @@ namespace TravelTripProject.Controllers
             c.SaveChanges();
             return RedirectToAction("CommentList");
         }
-
+        [Authorize]
         public ActionResult GetComment(int id)
         {
             var cm = c.CommentsS.Find(id);
             return View("GetComment", cm);
         }
+        [Authorize]
         public ActionResult UpdateComment(Comments y)
         {
             var comment = c.CommentsS.Find(y.ID);
